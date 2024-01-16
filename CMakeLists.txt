@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.14)
 project(get_sorty VERSION 0.1.0 LANGUAGES C CXX)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 # find_package(GTest CONFIG REQUIRED)
 # enable_testing()
 
 add_executable(get_sorty src/main.cpp)
+
+target_include_directories(get_sorty PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # target_link_libraries(get_sorty PRIVATE GTest::gtest GTest::gtest_main)
 
