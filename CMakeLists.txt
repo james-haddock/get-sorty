@@ -1,18 +1,15 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
+project(get_sorty VERSION 0.1.0 LANGUAGES C CXX)
 
-set(CMAKE_TOOLCHAIN_FILE /vcpkg/scripts/buildsystems/vcpkg.cmake)
+set(CMAKE_CXX_STANDARD 20)
 
-project(get_sorty VERSION 0.1)
+# find_package(GTest CONFIG REQUIRED)
+# enable_testing()
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+add_executable(get_sorty src/main.cpp)
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
+# target_link_libraries(get_sorty PRIVATE GTest::gtest GTest::gtest_main)
 
-file(GLOB SOURCES "*.cpp")
-
-add_executable(get_sorty ${SOURCES})
-
-configure_file(Config.h.in Config.h)
-
-target_include_directories(get_sorty PUBLIC "${PROJECT_BINARY_DIR}")
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
