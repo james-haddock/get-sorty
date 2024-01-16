@@ -1,0 +1,48 @@
+# Ignore build output directories
+/bin/
+/out/
+/build/
+
+# Ignore object files
+*.o
+*.obj
+
+# Ignore archive files
+*.a
+
+# Ignore shared object files
+*.so
+
+# Ignore dynamic-link library files
+*.dll
+
+# Ignore dependency files
+*.d
+
+# Ignore precompiled header files
+*.gch
+*.pch
+
+# Ignore debug files
+*.idb
+*.pdb
+
+# Ignore profiling files
+*.gcda
+*.gcno
+*.gcov
+
+# Ignore user-specific IDE configuration files
+.vscode/
+.idea/
+
+# Ignore CMake generated files
+/build/CMakeFiles/
+/build/CMakeCache.txt
+
+# Ignore Ninja generated files
+*.ninja_deps
+*.ninja_log
+
+# Ignore debug symbol directories on macOS
+*.dSYM/
