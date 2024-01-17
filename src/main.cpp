@@ -14,15 +14,16 @@ int main() {
     std::cout << "Please type your file path:";
     std::cin >> path;
     file_paths.push_back(path);
-    bool stop_observing = false;
     DirectoryMonitor directoryMonitor(file_paths);
-    directoryMonitor.start_monitoring(stop_observing);
+    directoryMonitor.start_monitoring();
 
     std::string command;
     while (command != "stop") {
-        std::cout << "Type 'stop' to stop monitoring and exit the program: ";
+        std::cout << "Type 'stop' to stop monitoring and exit the program:\n";
         std::cin >> command;
     }
-
+    
+    directoryMonitor.stop_monitoring();
+    
     return 0;
 };

@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 # find_package(GTest CONFIG REQUIRED)
 # enable_testing()
 
-add_executable(get_sorty src/main.cpp)
+add_executable(get_sorty src/main.cpp src/infrastructure/directory_monitor.cpp)
 
 target_include_directories(get_sorty PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
