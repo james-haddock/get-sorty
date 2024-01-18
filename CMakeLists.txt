@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
+
+set(CMAKE_TOOLCHAIN_FILE "vcpkg/scripts/buildsystems/vcpkg.cmake")
+
 project(get_sorty VERSION 0.1.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -6,9 +9,8 @@ set(CMAKE_CXX_STANDARD 17)
 # find_package(GTest CONFIG REQUIRED)
 # enable_testing()
 
-add_executable(get_sorty src/main.cpp src/infrastructure/directory_monitor.cpp)
-
-target_include_directories(get_sorty PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+add_subdirectory(service)
+add_subdirectory(interface)
 
 # target_link_libraries(get_sorty PRIVATE GTest::gtest GTest::gtest_main)
 
