@@ -8,7 +8,7 @@ This project is a directory monitor that watches for changes in specified direct
 
 - Monitor multiple directories for changes
 - Perform tasks on new files and directories based on specified attributes
-- User-configurable tasks for each file extension
+- User-configurable tasks for each file
 - Multi-platform functionality (MacOS, Linux, Windows)
 - Discreet and efficient background service
 - Separate CLI for configuration (connects to the service via API)
