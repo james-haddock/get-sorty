@@ -6,9 +6,9 @@ This application is a directory observer that watches for changes in specified d
 
 ## Core Features
 
-- Monitor multiple directories for changes
-- Perform tasks on new files and directories based on specified attributes
-- User-configurable tasks for each file
+- Monitor multiple directories at once
+- Perform tasks on new files and folders based on specified attributes
+- User-configurable tasks
 - Multi-platform functionality (MacOS, Linux, Windows)
 - Discreet and efficient background service
 - Separate CLI for configuration (connects to the service via API)
