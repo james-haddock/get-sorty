@@ -15,7 +15,7 @@ This project is a directory monitor that watches for changes in specified direct
 
 ## How to Use
 
-1. Configure the tasks for each file extension in the TOML configuration file.
+1. Configure the tasks for each file extension using the get_sorty_config executable.
 2. Run the application.
 3. The application will start monitoring the specified directories for changes.
 4. When a new file is added to a directory, the application will perform the tasks configured for that file's extension.
