@@ -4,7 +4,7 @@
 
 This project is a directory monitor that watches for changes in specified directories. When a new file or folder is added to a directory, it performs a series of tasks based on the item's attributes. The tasks for each file are configurable by the user.
 
-## Features
+## Core Features
 
 - Monitor multiple directories for changes
 - Perform tasks on new files and directories based on specified attributes
