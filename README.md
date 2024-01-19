@@ -33,4 +33,4 @@ If you want to build Get Sorty from source, you'll need a C++ compiler and the C
 ## License
 Get Sorty is licensed under the MIT License. See the LICENSE file for more details.
 
-[Cartoon Vectors by Vecteezy](https://www.vecteezy.com/free-vector/cartoon)
+<a href="https://www.vecteezy.com/free-vector/cartoon">Cartoon Vectors by Vecteezy</a>
