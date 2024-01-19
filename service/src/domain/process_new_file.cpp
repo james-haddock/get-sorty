@@ -6,9 +6,10 @@ void ProcessNewFile::process_file(const std::filesystem::path& file) {
     std::string file_extension = file.extension();
     auto it = extension_commands.find(file_extension);
     if (it != extension_commands.end()) {
-        std::unordered_map<std::unique_ptr<Command>, std::string> commands = it->second;
+        std::unordered_map<std::shared_ptr<Command>, std::string> commands = it->second;
         for (const auto& command_pair : commands) {
             command_pair.first->execute(file, command_pair.second);
         }
     }
+    std::cout << "Not a configured file extension, no action performed\n";
 };

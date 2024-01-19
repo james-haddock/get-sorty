@@ -12,6 +12,7 @@ void execute(const std::filesystem::path &item_to_move,
     std::filesystem::path destination_path(destination_directory);
     destination_path /= item_to_move.filename(); 
     std::filesystem::rename(item_to_move, destination_path);
+    std::cout << item_to_move << " moved to directory " << destination_path << "\n";
 }
 };
 
