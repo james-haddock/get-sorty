@@ -6,16 +6,23 @@
 
 DirectoryMonitor::DirectoryMonitor(
     const std::vector<std::filesystem::path> &paths)
-    : directory_paths(paths) {}
+    : directories_to_monitor(paths) {}
 
 DirectoryMonitor::~DirectoryMonitor() { stop_monitoring(); }
 
+void DirectoryMonitor::initialize_files() {
+    for (const auto &path : directories_to_monitor) {
+        previous_files[path.string()] = get_files_in_directory(path);
+    }
+}
+
 void DirectoryMonitor::start_monitoring() {
+  initialize_files();
   stop_observing = false;
   monitor_thread = std::thread([&]() {
     while (!stop_observing) {
       std::cout << "Monitoring directories...\n";
-      for (const auto &path : directory_paths) {
+      for (const auto &path : directories_to_monitor) {
         std::set<std::filesystem::path> current_files =
             get_files_in_directory(path);
         if (previous_files[path.string()] != current_files) {

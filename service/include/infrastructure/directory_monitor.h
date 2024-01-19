@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DIRECTORY_MONITOR_H
+#define DIRECTORY_MONITOR_H
 #include "domain/process_new_file.h"
 
 #include <filesystem>
@@ -18,7 +19,8 @@ public:
   void remove_directory(const std::filesystem::path &path);
 
 private:
-  std::vector<std::filesystem::path> directory_paths;
+void initialize_files();
+  std::vector<std::filesystem::path> directories_to_monitor;
   std::map<std::string, std::set<std::filesystem::path>> previous_files;
   std::thread monitor_thread;
   bool stop_observing = false;
@@ -28,3 +30,5 @@ private:
   std::mutex cv_m;
   ProcessNewFile process_new_file;
 };
+
+#endif
