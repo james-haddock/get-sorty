@@ -17,7 +17,6 @@ int main() {
         std::cin >> command;
       }
       directoryMonitor.stop_monitoring();
-;
         std::cout << "The provided path is not a valid directory.\n";
 
 
