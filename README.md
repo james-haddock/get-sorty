@@ -1,6 +1,6 @@
 # Get Sorty
 <p align="center">
-  <img src="https://github.com/james-haddock/get_sorty/assets/123553781/37dd4f76-2466-443c-b761-2b8af27a677e" width="500px" alt="vecteezy_computer-character-retro-mascot-character_24659690">
+  <img src="https://github.com/james-haddock/get_sorty/assets/123553781/37dd4f76-2466-443c-b761-2b8af27a677e" width="550px" alt="vecteezy_computer-character-retro-mascot-character_24659690">
 </p>
 
 ## Overview
