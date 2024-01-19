@@ -1,5 +1,5 @@
 # Get Sorty
-<img src="https://github.com/james-haddock/get_sorty/assets/123553781/37dd4f76-2466-443c-b761-2b8af27a677e" width="500px" alt="vecteezy_computer-character-retro-mascot-character_24659690">
+<img src="https://github.com/james-haddock/get_sorty/assets/123553781/37dd4f76-2466-443c-b761-2b8af27a677e" width="200px" alt="vecteezy_computer-character-retro-mascot-character_24659690">
 
 ## Overview
 Get Sorty is a powerful, user-configurable file flow facilitator. It's designed to monitor multiple directories simultaneously and perform user-defined actions based on the attributes of new files or folders added to these directories. This application is a discreet and efficient background service that works across multiple platforms including MacOS, Linux, and Windows. Built in C++ for speed and efficiency.
