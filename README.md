@@ -2,7 +2,7 @@
 
 #### File Flow Facilitator
 
-This application is a directory observer that watches for changes in specified directories. When a new file or folder is added to a directory, it performs defined actions based on the item's attributes. The tasks for each file are configurable by the user.
+This application is a directory observer that watches for changes in specified directories. When a new file or folder is added to a directory, it performs user defined actions based on the item's attributes.
 
 ## Core Features
 
