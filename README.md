@@ -1,7 +1,7 @@
 # Get Sorty
 
 ## Overview
-Get Sorty is a powerful, user-configurable file flow facilitator. It's designed to monitor multiple directories simultaneously and perform user-defined actions based on the attributes of new files or folders added to these directories. This application is a discreet and efficient background service that works across multiple platforms including MacOS, Linux, and Windows.
+Get Sorty is a powerful, user-configurable file flow facilitator. It's designed to monitor multiple directories simultaneously and perform user-defined actions based on the attributes of new files or folders added to these directories. This application is a discreet and efficient background service that works across multiple platforms including MacOS, Linux, and Windows. Built in C++ for speed and efficiency.
 
 ## Core Features
 - **Directory Monitoring**: Get Sorty can monitor multiple directories at once, watching for any changes such as the addition of new files or folders.
@@ -12,12 +12,6 @@ Get Sorty is a powerful, user-configurable file flow facilitator. It's designed 
 - **Background Service**: Get Sorty runs as a background service, quietly monitoring your directories without interrupting your work. It uses efficient algorithms and system calls to minimize CPU and memory usage.
 - **Configuration CLI**: Get Sorty comes with a separate command-line interface for configuration. This CLI connects to the Get Sorty service via an API, allowing you to configure Get Sorty without stopping the service.
 
-## How to Use
-1. Install Get Sorty: Download the latest release and install it on your system.
-2. Configure Tasks: Use the get_sorty_config executable to configure the tasks for each file extension. You can specify what actions Get Sorty should take when it detects a new file with a certain extension.
-3. Run Get Sorty: Start the Get Sorty service. It will begin monitoring the directories you specified.
-4. Let Get Sorty Handle Your Files: When a new file is added to a monitored directory, Get Sorty will automatically perform the tasks you configured for that file's extension.
-
 ## Building from Source (MacOS / Linux)
 If you want to build Get Sorty from source, you'll need a C++ compiler and the CMake build system. Here are the steps to build Get Sorty:
 1. Clone the Get Sorty repository.
@@ -25,6 +19,13 @@ If you want to build Get Sorty from source, you'll need a C++ compiler and the C
 3. Create a build folder in the root of the repository.
 4. Run cmake .. from within the new build directory to generate the build files.
 5. Run make to build the Get Sorty executables.
+
+## How to Use
+1. Install Get Sorty: Download the latest release and install it on your system.
+2. Configure Tasks: Use the get_sorty_config executable to configure the tasks for each file extension. You can specify what actions Get Sorty should take when it detects a new file with a certain extension.
+3. Run Get Sorty: Start the Get Sorty service. It will begin monitoring the directories you specified.
+4. Let Get Sorty Handle Your Files: When a new file is added to a monitored directory, Get Sorty will automatically perform the tasks you configured for that file's extension.
+
 
 ## License
 Get Sorty is licensed under the MIT License. See the LICENSE file for more details.
