@@ -1,3 +1,4 @@
+#pragma once
 #include "domain/process_new_file.h"
 
 #include <filesystem>
