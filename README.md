@@ -55,6 +55,18 @@ Get Sorty is a powerful, user-configurable file flow facilitator. It's designed 
 
     By efficiently handling file paths with `std::set` and leveraging the capabilities of the filesystem library for file operations, the application ensures that these operations are performed as efficiently as possible, contributing to the overall performance of the application.
 
+- **Background Service and Configuration CLI**: The application operates as a background service, discreetly monitoring file system activity with minimal impact on system resources, ensuring a smooth user experience. 
+
+    In addition, a separate Command Line Interface (CLI) is provided for configuration. This CLI can be used in conjunction with the service, allowing users to adjust settings and parameters as needed. It communicates with the service via a RESTful API, providing a flexible and efficient means of interaction.
+
+    This combination of a low-impact background service and a separate, interactive CLI contributes to the application's usability and adaptability.
+
+- **Persistent App Data and User Configuration**: The application uses serialization and parsing of TOML files to store persistent app data and user configuration. 
+
+    TOML is a human-readable data serialization language designed for simplicity and compatibility. It is used in the `user_config.cpp` file to manage user settings and parameters. This allows users to easily modify their settings in a format that is both easy to read and write.
+
+    By using TOML files, the application ensures that app data and user configurations are stored persistently and can be easily modified as needed, contributing to the flexibility and user-friendliness of the application.
+
 - **Memory Safety**: The application employs Resource Acquisition Is Initialization (RAII) and smart pointers for memory safety. RAII ensures resources are acquired and released appropriately during the object's lifetime. Smart pointers, like `std::shared_ptr`, manage dynamic memory, automatically deallocating it when no longer needed. These techniques prevent memory leaks and contribute to the application's memory safety.
 
 ## Building from Source (MacOS / Linux)
