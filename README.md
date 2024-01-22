@@ -17,7 +17,6 @@ Get Sorty is a powerful, user-configurable file flow facilitator. It's designed 
 
 ## Software Design
 ### Layered Architecture
-Get Sorty follows a layered architecture design, which helps in separating concerns and making the codebase easier to maintain and extend. The architecture is divided into the following layers.
 - **Domain Layer**: This layer contains the core business logic of the application. It includes classes and functions for processing new files, moving files, and locking files.
 - **Infrastructure Layer**: This layer provides concrete implementations of the interfaces defined in the domain layer. It includes classes for monitoring directories.
 - **Application Layer**: This layer orchestrates the use cases of the system. It includes the main service that ties everything together.
