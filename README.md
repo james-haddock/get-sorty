@@ -23,7 +23,7 @@ Get Sorty is a powerful, user-configurable file flow facilitator. It's designed 
     - **Interface Layer**: This layer defines how external systems or users interact with the application. It includes the Command Line Interface (CLI) for configuring the application.
     - **Configuration Layer**: This layer handles the user configuration settings. It includes classes for parsing and managing user configuration.
  
-Each layer has a specific role and interacts with the other layers in a controlled manner. This separation of concerns makes the code easier to understand, test, and maintain.
+  Each layer has a specific role and interacts with the other layers in a controlled manner. This separation of concerns makes the code easier to   understand, test, and maintain.
 
 - **Concurrency Model**: The application makes use of multithreading to enhance performance and maintain the responsiveness of the core application functionality. In the `DirectoryMonitor` class, the `start_monitoring` function spawns a new thread that continuously monitors a set of directories for changes.
 
