@@ -18,11 +18,11 @@ Get Sorty is a powerful, user-configurable file flow facilitator. It's designed 
 ## Software Design
 ### Layered Architecture
 Get Sorty follows a layered architecture design, which helps in separating concerns and making the codebase easier to maintain and extend. The architecture is divided into the following layers:
-    - **Domain Layer**: This layer contains the core business logic of the application. It includes classes and functions for processing new files, moving files, and locking files.
-    - **Infrastructure Layer**: This layer provides concrete implementations of the interfaces defined in the domain layer. It includes classes for monitoring directories.
-    - **Application Layer**: This layer orchestrates the use cases of the system. It includes the main service that ties everything together.
-    - **Interface Layer**: This layer defines how external systems or users interact with the application. It includes the Command Line Interface (CLI) for configuring the application.
-    - **Configuration Layer**: This layer handles the user configuration settings. It includes classes for parsing and managing user configuration.
+- **Domain Layer**: This layer contains the core business logic of the application. It includes classes and functions for processing new files, moving files, and locking files.
+- **Infrastructure Layer**: This layer provides concrete implementations of the interfaces defined in the domain layer. It includes classes for monitoring directories.
+- **Application Layer**: This layer orchestrates the use cases of the system. It includes the main service that ties everything together.
+- **Interface Layer**: This layer defines how external systems or users interact with the application. It includes the Command Line Interface (CLI) for configuring the application.
+- **Configuration Layer**: This layer handles the user configuration settings. It includes classes for parsing and managing user configuration.
  
   Each layer has a specific role and interacts with the other layers in a controlled manner. This separation of concerns makes the code easier to   understand, test, and maintain.
 
