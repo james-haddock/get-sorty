@@ -30,55 +30,55 @@ Get Sorty follows a layered architecture design, which helps in separating conce
 ### Concurrency Model
 The application makes use of multithreading to enhance performance and maintain the responsiveness of the core application functionality. In the `DirectoryMonitor` class, the `start_monitoring` function spawns a new thread that continuously monitors a set of directories for changes.
 
-    This design ensures that the potentially time-consuming task of monitoring directories and processing new files does not block the main thread of the application. Even if the directory monitoring thread is busy processing a large number of new files, the main thread can continue to respond to user input and perform other tasks.
+  This design ensures that the potentially time-consuming task of monitoring directories and processing new files does not block the main thread of the application. Even if the directory monitoring thread is busy processing a large number of new files, the main thread can continue to respond to user input and perform other tasks.
 
-    The use of a separate thread for directory monitoring also allows the application to take advantage of multi-core processors. The directory monitoring thread can run on one core, while the main thread runs on another core, thereby improving the overall performance of the application.
+  The use of a separate thread for directory monitoring also allows the application to take advantage of multi-core processors. The directory monitoring thread can run on one core, while the main thread runs on another core, thereby improving the overall performance of the application.
 
-    This use of multithreading is a key aspect of the application's concurrency model. It allows the application to efficiently handle multiple tasks simultaneously, improving the overall performance and user experience.
+  This use of multithreading is a key aspect of the application's concurrency model. It allows the application to efficiently handle multiple tasks simultaneously, improving the overall performance and user experience.
 
   
 ### Scalability and Maintainability with Design Patterns
 The application is designed with scalability and maintainability in mind. One of the key design patterns used in the application is the Command pattern. This pattern is used to encapsulate each request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
 
-    The `Command` class in the domain layer is an abstract base class that declares an interface for executing operations. Classes like `CopyCommand` extend this base class and implement the `execute` method. This design makes it easy to add new commands in the future. To add a new command, we simply need to create a new class that extends the `Command` class and implement the `execute` method.
+  The `Command` class in the domain layer is an abstract base class that declares an interface for executing operations. Classes like `CopyCommand` extend this base class and implement the `execute` method. This design makes it easy to add new commands in the future. To add a new command, we simply need to create a new class that extends the `Command` class and implement the `execute` method.
 
-    This use of the Command pattern allows the application to scale in terms of functionality. As the requirements of the application grow, new commands can be added as separate classes without modifying the existing code. This contributes to the maintainability of the codebase, as existing code does not need to be changed each time a new feature is added.
+  This use of the Command pattern allows the application to scale in terms of functionality. As the requirements of the application grow, new commands can be added as separate classes without modifying the existing code. This contributes to the maintainability of the codebase, as existing code does not need to be changed each time a new feature is added.
 
 
 ### Decoupled Modular Design
 The application is designed with a decoupled, modular architecture. This is evident in the organization of the source code into separate files, each responsible for a specific piece of functionality. 
 
-    For instance, `service.cpp`, `directory_monitor.cpp`, `process_new_file.cpp`, `move_file.cpp`, `file_lock.cpp`, and `user_config.cpp` each encapsulate distinct functionalities. This separation of concerns allows for easier maintenance and testing, as changes in one module do not affect others.
+  For instance, `service.cpp`, `directory_monitor.cpp`, `process_new_file.cpp`, `move_file.cpp`, `file_lock.cpp`, and `user_config.cpp` each encapsulate distinct functionalities. This separation of concerns allows for easier maintenance and testing, as changes in one module do not affect others.
 
-    Furthermore, the application leverages the power of composition over inheritance. Functionality is primarily achieved by composing classes and functions together, rather than through deep inheritance hierarchies. This approach increases flexibility, as components can be easily swapped or modified without affecting the overall system.
+  Furthermore, the application leverages the power of composition over inheritance. Functionality is primarily achieved by composing classes and functions together, rather than through deep inheritance hierarchies. This approach increases flexibility, as components can be easily swapped or modified without affecting the overall system.
 
-    This decoupled, modular design contributes to the maintainability, flexibility, and testability of the application.
+  This decoupled, modular design contributes to the maintainability, flexibility, and testability of the application.
 
 
 ### Performance Considerations 
 The application is designed with performance in mind. Key performance considerations include efficient handling of file paths and file operations.
 
-    In the `DirectoryMonitor` class, `std::set` is used to store the file paths in a directory. The `std::set` container, a binary search tree, provides fast lookup, insertion, and removal of elements. This allows the application to quickly check if a file path is in the set, which is done in the `start_monitoring` function to detect new files.
+  In the `DirectoryMonitor` class, `std::set` is used to store the file paths in a directory. The `std::set` container, a binary search tree, provides fast lookup, insertion, and removal of elements. This allows the application to quickly check if a file path is in the set, which is done in the `start_monitoring` function to detect new files.
 
-    In the `CopyCommand` class, the C++ Standard Library's filesystem library is used to perform the file copy operation. The filesystem library provides efficient and platform-independent file operations. For example, the `std::filesystem::rename` function is used to move files from one directory to another. This function is designed to be efficient and is typically faster than manually reading a file into memory, writing it to a new location, and then deleting the original file.
+  In the `CopyCommand` class, the C++ Standard Library's filesystem library is used to perform the file copy operation. The filesystem library provides efficient and platform-independent file operations. For example, the `std::filesystem::rename` function is used to move files from one directory to another. This function is designed to be efficient and is typically faster than manually reading a file into memory, writing it to a new location, and then deleting the original file.
 
-    By efficiently handling file paths with `std::set` and leveraging the capabilities of the filesystem library for file operations, the application ensures that these operations are performed as efficiently as possible, contributing to the overall performance of the application.
+  By efficiently handling file paths with `std::set` and leveraging the capabilities of the filesystem library for file operations, the application ensures that these operations are performed as efficiently as possible, contributing to the overall performance of the application.
 
 
 ### Background Service and Configuration CLI
 The application operates as a background service, discreetly monitoring file system activity with minimal impact on system resources, ensuring a smooth user experience. 
 
-    In addition, a separate Command Line Interface (CLI) is provided for configuration. This CLI can be used in conjunction with the service, allowing users to adjust settings and parameters as needed. It communicates with the service via a RESTful API, providing a flexible and efficient means of interaction.
+  In addition, a separate Command Line Interface (CLI) is provided for configuration. This CLI can be used in conjunction with the service, allowing users to adjust settings and parameters as needed. It communicates with the service via a RESTful API, providing a flexible and efficient means of interaction.
 
-    This combination of a low-impact background service and a separate, interactive CLI contributes to the application's usability and adaptability.
+  This combination of a low-impact background service and a separate, interactive CLI contributes to the application's usability and adaptability.
 
 
 ### Persistent App Data and User Configuration
 The application uses serialization and parsing of TOML files to store persistent app data and user configuration. 
 
-    TOML is a human-readable data serialization language designed for simplicity and compatibility. It is used in the `user_config.cpp` file to manage user settings and parameters. This allows users to easily modify their settings in a format that is both easy to read and write.
+  TOML is a human-readable data serialization language designed for simplicity and compatibility. It is used in the `user_config.cpp` file to manage user settings and parameters. This allows users to easily modify their settings in a format that is both easy to read and write.
 
-    By using TOML files, the application ensures that app data and user configurations are stored persistently and can be easily modified as needed, contributing to the flexibility and user-friendliness of the application.
+  By using TOML files, the application ensures that app data and user configurations are stored persistently and can be easily modified as needed, contributing to the flexibility and user-friendliness of the application.
 
 
 ### Memory Safety
