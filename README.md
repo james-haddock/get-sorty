@@ -31,7 +31,7 @@ Each layer has a specific role and interacts with the other layers in a controll
 
     This use of multithreading is a key aspect of the application's concurrency model. It allows the application to efficiently handle multiple tasks simultaneously, improving the overall performance and user experience.
   
-- - **Scalability and Maintainability with Design Patterns**: The application is designed with scalability and maintainability in mind. One of the key design patterns used in the application is the Command pattern. This pattern is used to encapsulate each request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
+- **Scalability and Maintainability with Design Patterns**: The application is designed with scalability and maintainability in mind. One of the key design patterns used in the application is the Command pattern. This pattern is used to encapsulate each request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
 
     The `Command` class in the domain layer is an abstract base class that declares an interface for executing operations. Classes like `CopyCommand` extend this base class and implement the `execute` method. This design makes it easy to add new commands in the future. To add a new command, we simply need to create a new class that extends the `Command` class and implement the `execute` method.
 
