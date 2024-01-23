@@ -1,0 +1,8 @@
+Package: tomlplusplus
+Version: 3.4.0
+Depends: vcpkg-tool-meson
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 40c6951458fe9935dacac7e967b2c9c4bfa473eba684b3f6046e3ae1c14a29dd
+Description: Header-only TOML config file parser and serializer for modern C++.
+Status: install ok installed

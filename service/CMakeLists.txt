@@ -7,6 +7,9 @@ add_executable(service src/service.cpp
  src/domain/file_lock.cpp
  src/config/user_config.cpp)
 
- find_package(PkgConfig REQUIRED)
- pkg_check_modules(tomlplusplus REQUIRED IMPORTED_TARGET tomlplusplus)
- target_link_libraries(service PkgConfig::tomlplusplus)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(tomlplusplus REQUIRED IMPORTED_TARGET tomlplusplus)
+
+find_package(Boost REQUIRED COMPONENTS system)
+
+target_link_libraries(service PRIVATE PkgConfig::tomlplusplus Boost::boost Boost::system)

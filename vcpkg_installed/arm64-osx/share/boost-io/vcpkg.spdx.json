@@ -1,0 +1,110 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/boost-io-arm64-osx-1.83.0-0c27fe6e-1569-4fab-bac9-4d7454c50a37",
+  "name": "boost-io:arm64-osx@1.83.0 30c6f1fbdf4664fd51f3e718db86c2e013547ed3e01953a1c5d393ce2039e72e",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-710a3116bbd615864eef5f9010af178034cb9b44"
+    ],
+    "created": "2024-01-23T21:00:06Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "boost-io",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "1.83.0",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/boost-io",
+      "homepage": "https://github.com/boostorg/io",
+      "licenseConcluded": "BSL-1.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "Boost io module",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "boost-io:arm64-osx",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "30c6f1fbdf4664fd51f3e718db86c2e013547ed3e01953a1c5d393ce2039e72e",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "BSL-1.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "boostorg/io",
+      "downloadLocation": "git+https://github.com/boostorg/io@boost-1.83.0",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "f9aac28c4ecb9d305e0eb0a7d108abaa3c7f769a8027722a77554b086bc2e5af412279e7fc274d7d13e567a11f0fd89ad8f238f118d4c9d8d84ee2c0f14f9d06"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": ".//Users/jameshaddock/Desktop/Coding/Projects/get_sorty/vcpkg/ports/boost-io/portfile.cmake",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "88e7b4310122d627483fec3b56c86244e673d00da50b346d6088147a4255c7f7"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": ".//Users/jameshaddock/Desktop/Coding/Projects/get_sorty/vcpkg/ports/boost-io/vcpkg.json",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "87be3be34852569f5497461cb295c8dfbecb57d22b3f860bf17d5f53b3f0358d"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}
