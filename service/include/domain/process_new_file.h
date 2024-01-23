@@ -18,8 +18,7 @@ public:
 			extension_commands = {
 					{".epub",
 					{{copyCommand,
-						"/Users/jameshaddock/Desktop/Coding/Projects/get_sorty/service/"
-						"test/testdir1/copyto"}}}};
+						"/Users/jameshaddock/Desktop/Coding/Projects/get_sorty/test/testdir1/copyto"}}}};
 	FileLock file_lock;
 };
 

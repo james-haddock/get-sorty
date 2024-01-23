@@ -1,0 +1,110 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/boost-predef-arm64-osx-1.83.0-69575e64-d9a2-41c0-b9a3-9bbbed9f9dc7",
+  "name": "boost-predef:arm64-osx@1.83.0 c62ec6d277774cc82bba59e4852cd9bcba5f7522112c2b88e243aad1de0b6d0b",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-710a3116bbd615864eef5f9010af178034cb9b44"
+    ],
+    "created": "2024-01-23T21:00:05Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "boost-predef",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "1.83.0",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/boost-predef",
+      "homepage": "https://github.com/boostorg/predef",
+      "licenseConcluded": "BSL-1.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "Boost predef module",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "boost-predef:arm64-osx",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "c62ec6d277774cc82bba59e4852cd9bcba5f7522112c2b88e243aad1de0b6d0b",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "BSL-1.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "boostorg/predef",
+      "downloadLocation": "git+https://github.com/boostorg/predef@boost-1.83.0",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "54926d14810b268f594848c0f5614728d78e742fc83648eaf8a941c68df7ffafe12f88f009b3af7e398f62c0b1bed273e1d717b2b3a4b8066a4556b35a479e38"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": ".//Users/jameshaddock/Desktop/Coding/Projects/get_sorty/vcpkg/ports/boost-predef/portfile.cmake",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "235925f8befc48df4a673f0ce699de543634c4a5d33c4169ad5b071b623f5cd4"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": ".//Users/jameshaddock/Desktop/Coding/Projects/get_sorty/vcpkg/ports/boost-predef/vcpkg.json",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "493ce9d26af68c4451c6a94aa31de7911c9cb091493522c33eb19461c75d9342"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}
