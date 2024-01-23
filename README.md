@@ -13,7 +13,7 @@ Get Sorty is a powerful, user-configurable file flow facilitator. It's designed 
 - **Multi-Platform Functionality**: Get Sorty is designed to work on MacOS, Linux, and Windows. It can handle platform-specific file systems and paths.
 - **Multithreading**: Get Sorty implements multithreading to perform multiple actions simultaneously. This allows it to efficiently handle large numbers of files and directories without slowing down your system.
 - **Background Service**: Get Sorty runs as a background service, quietly monitoring your directories without interrupting your work. It uses efficient algorithms and system calls to minimize CPU and memory usage.
-- **Configuration CLI**: Get Sorty comes with a separate command-line interface for configuration. This CLI connects to the Get Sorty service via an API, allowing you to configure Get Sorty without stopping the service.
+- **Configuration CLI**: Get Sorty comes with a separate command-line interface for configuration. This CLI connects to the Get Sorty service via Inter-Process Communication (IPC), allowing you to configure Get Sorty without stopping the service.
 
 ## Software Design
 ### Layered Architecture
@@ -67,7 +67,7 @@ The application is designed with performance in mind. Key performance considerat
 ### Background Service and Configuration CLI
 The application operates as a background service, discreetly monitoring file system activity with minimal impact on system resources, ensuring a smooth user experience. 
 
-  In addition, a separate Command Line Interface (CLI) is provided for configuration. This CLI can be used in conjunction with the service, allowing users to adjust settings and parameters as needed. It communicates with the service via a RESTful API, providing a flexible and efficient means of interaction.
+  In addition, a separate Command Line Interface (CLI) is provided for configuration. This CLI can be used in conjunction with the service, allowing users to adjust settings and parameters as needed. It communicates with the service via sockets and Inter-Process Communication (IPC), providing a flexible and efficient means of interaction.
 
   This combination of a low-impact background service and a separate, interactive CLI contributes to the application's usability and adaptability.
 
