@@ -1,9 +1,7 @@
 {
-  "name": "my-project",
-  "version-string": "0.1.0",
   "dependencies": [
-    "boost-asio",
     "tomlplusplus",
+    "boost-asio",
     "ftxui"
   ]
 }
