@@ -1,3 +1,6 @@
+#ifdef __unix__
+#include <cstdlib>
+#endif
 #include "infrastructure/directory_monitor.h"
 #include <ftxui/component/component.hpp> 
 #include <ftxui/component/screen_interactive.hpp>
@@ -13,6 +16,9 @@ using namespace ftxui;
 using boost::asio::local::stream_protocol;
 
 int main() {
+  #ifdef __unix__
+    system("./service > /dev/null 2>&1 &");
+#endif
   std::cout << "Get Sorty!\n";
   std::vector<std::filesystem::path> directory_paths_to_monitor;
   // retrieve directories to monitor from get_sorty_config.TOML
@@ -20,32 +26,24 @@ int main() {
   // check integrity of the file paths that have been stored
   DirectoryMonitor directoryMonitor(directory_paths_to_monitor);
 
-  std::vector<std::string> entries = {
-      "Start monitoring",
-      "Stop monitoring",
-  };
-  int selected = 0;
-
-  MenuOption option;
-  option.on_enter = [&] {
-    if (selected == 0) {
-      directoryMonitor.start_monitoring();
-    } else if (selected == 1) {
-      directoryMonitor.stop_monitoring();
-    }
-  };
-
-  auto screen = ScreenInteractive::TerminalOutput();
-  auto menu = Menu(&entries, &selected, option);
-
   boost::asio::io_service io_service;
+  stream_protocol::acceptor acceptor(io_service, stream_protocol::endpoint("/tmp/get_sorty_socket"));
   stream_protocol::socket socket(io_service);
-  socket.connect(stream_protocol::endpoint("/tmp/get_sorty_socket"));
+  acceptor.accept(socket);
 
-  screen.Loop(std::make_shared<ComponentBase>([&] {
-    menu->Render();
-    boost::asio::write(socket, boost::asio::buffer(std::to_string(selected)));
-  }));
+  for (;;) {
+    int command;
+    boost::asio::read(socket, boost::asio::buffer(&command, sizeof(command)));
+    if (command == 0) {
+      directoryMonitor.start_monitoring();
+      std::string response = "Service started\n";
+      boost::asio::write(socket, boost::asio::buffer(response));
+    } else if (command == 1) {
+      directoryMonitor.stop_monitoring();
+      std::string response = "Service stopped\n";
+      boost::asio::write(socket, boost::asio::buffer(response));
+    }
+  }
 
   return 0;
 }

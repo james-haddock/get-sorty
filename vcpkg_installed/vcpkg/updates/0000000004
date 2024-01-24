@@ -1,8 +1,0 @@
-Package: vcpkg-tool-meson
-Version: 0.63
-Port-Version: 2
-Architecture: arm64-osx
-Multi-Arch: same
-Abi: 2f7ae9d3f3b62b9cca965e55af94ef29e48459f062e3e3e87982bc63211c95ec
-Description: Meson build system
-Status: install ok half-installed
