@@ -67,7 +67,7 @@ The application is designed with performance in mind. Key performance considerat
 ### Shared Memory - Daemon Service and Configuration CLI
 The application operates as a daemon service, discreetly monitoring file system activity with minimal impact on system resources, ensuring a smooth user experience. 
 
-  In addition, a separate Command Line Interface (CLI) is provided for configuration. This CLI can be used in conjunction with the service, allowing users to adjust settings and parameters as needed. IPC with the daemon is achieved via shared memory, providing a highly performant, efficient and flexible means of interaction.
+  In addition, a separate Command Line Interface (CLI) is provided for configuration. This CLI can be used in conjunction with the service, allowing users to adjust settings and parameters as needed. IPC with the daemon is achieved via shared memory, providing a highly performant, efficient and flexible means of bilateral communication.
 
   This combination of a low-impact background service and a separate, interactive CLI contributes to the application's usability and adaptability.
 
