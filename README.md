@@ -13,7 +13,7 @@ Get Sorty is a powerful, user-configurable file flow facilitator. It's designed 
 - **Multi-Platform Functionality**: Get Sorty is designed to work on MacOS, Linux, and Windows. It can handle platform-specific file systems and paths.
 - **Multithreading**: Get Sorty implements multithreading to perform multiple actions simultaneously. This allows it to efficiently handle large numbers of files and directories without slowing down your system.
 - **Daemon Service**: Get Sorty runs as a daemon service, quietly monitoring your directories without interrupting your work. It uses efficient algorithms and system calls to minimize CPU and memory usage.
-- **Configuration CLI**: Get Sorty comes with a separate command-line interface for configuration. This CLI connects to the Get Sorty service via Inter-Process Communication (IPC), allowing you to configure Get Sorty without stopping the service.
+- **Configuration CLI**: Get Sorty comes with a separate command-line interface for configuration. This CLI connects to the Get Sorty daemon via Inter-Process Communication (IPC) and shared memory, allowing you to configure Get Sorty without stopping the service.
 
 ## Software Design
 ### Layered Architecture
