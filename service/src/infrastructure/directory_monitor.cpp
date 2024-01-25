@@ -1,8 +1,7 @@
-#include "infrastructure/directory_monitor.h"
-
 #include <chrono>
 #include <iostream>
 #include <thread>
+#include "infrastructure/directory_monitor.h"
 
 DirectoryMonitor::DirectoryMonitor(
     const std::vector<std::filesystem::path> &paths)
