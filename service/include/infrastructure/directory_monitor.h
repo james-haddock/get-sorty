@@ -1,6 +1,6 @@
 #ifndef DIRECTORY_MONITOR_H
 #define DIRECTORY_MONITOR_H
-#include "domain/process_new_file.h"
+#include "../domain/process_new_file.h"
 
 #include <filesystem>
 #include <map>

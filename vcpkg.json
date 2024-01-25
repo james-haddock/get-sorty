@@ -1,7 +1,16 @@
 {
   "dependencies": [
-    "tomlplusplus",
-    "boost-asio",
-    "ftxui"
+    {
+      "name": "tomlplusplus",
+      "version>=": "3.4.0"
+    },
+    {
+      "name": "boost",
+      "version>=": "1.84.0"
+    },
+    {
+      "name": "ftxui",
+      "version>=": "5.0.0"
+    }
   ]
 }

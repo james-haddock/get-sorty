@@ -1,4 +1,4 @@
-include_directories(include)
+set(VCPKG_TARGET_TRIPLET arm64-osx)
 
 add_executable(service src/service.cpp
  src/infrastructure/directory_monitor.cpp
@@ -7,5 +7,7 @@ add_executable(service src/service.cpp
  src/domain/file_lock.cpp
  src/config/user_config.cpp)
 
-find_package(Boost REQUIRED COMPONENTS system)
+ target_include_directories(service PRIVATE include)
+
+find_package(Boost REQUIRED system)
 target_link_libraries(service PRIVATE Boost::boost Boost::system)
