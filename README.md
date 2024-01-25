@@ -4,7 +4,7 @@
 </p>
 
 ## Overview
-Get Sorty is a powerful, user-configurable file flow facilitator. It's designed to monitor multiple directories simultaneously and perform user-defined actions based on the attributes of new files or folders added to these directories. This application is a discreet and efficient background service that works across multiple platforms including MacOS, Linux, and Windows. Built in C++ for speed and efficiency.
+Get Sorty is a powerful, user-configurable file flow facilitator. It's designed to monitor multiple directories simultaneously and perform user-defined actions based on the attributes of new files or folders added to these directories. This application is a discreet and efficient daemon service that works across multiple platforms including MacOS, Linux, and Windows. Built in C++ for speed and efficiency.
 
 ## Core Features
 - **Directory Monitoring**: Get Sorty can monitor multiple directories at once, watching for any changes such as the addition of new files or folders.
@@ -12,7 +12,7 @@ Get Sorty is a powerful, user-configurable file flow facilitator. It's designed 
 - **User-Configurable Tasks**: Users can define what actions Get Sorty should take when it detects a new file or folder. This includes moving the file to a new location, renaming the file, opening the file with a specific program, and more.
 - **Multi-Platform Functionality**: Get Sorty is designed to work on MacOS, Linux, and Windows. It can handle platform-specific file systems and paths.
 - **Multithreading**: Get Sorty implements multithreading to perform multiple actions simultaneously. This allows it to efficiently handle large numbers of files and directories without slowing down your system.
-- **Background Service**: Get Sorty runs as a background service, quietly monitoring your directories without interrupting your work. It uses efficient algorithms and system calls to minimize CPU and memory usage.
+- **Daemon Service**: Get Sorty runs as a daemon service, quietly monitoring your directories without interrupting your work. It uses efficient algorithms and system calls to minimize CPU and memory usage.
 - **Configuration CLI**: Get Sorty comes with a separate command-line interface for configuration. This CLI connects to the Get Sorty service via Inter-Process Communication (IPC), allowing you to configure Get Sorty without stopping the service.
 
 ## Software Design
@@ -64,10 +64,10 @@ The application is designed with performance in mind. Key performance considerat
   By efficiently handling file paths with `std::set` and leveraging the capabilities of the filesystem library for file operations, the application ensures that these operations are performed as efficiently as possible, contributing to the overall performance of the application.
 
 
-### Background Service and Configuration CLI
-The application operates as a background service, discreetly monitoring file system activity with minimal impact on system resources, ensuring a smooth user experience. 
+### Shared Memory - Daemon Service and Configuration CLI
+The application operates as a daemon service, discreetly monitoring file system activity with minimal impact on system resources, ensuring a smooth user experience. 
 
-  In addition, a separate Command Line Interface (CLI) is provided for configuration. This CLI can be used in conjunction with the service, allowing users to adjust settings and parameters as needed. It communicates with the service via sockets and Inter-Process Communication (IPC), providing a flexible and efficient means of interaction.
+  In addition, a separate Command Line Interface (CLI) is provided for configuration. This CLI can be used in conjunction with the service, allowing users to adjust settings and parameters as needed. It communicates with the daemon via shared memory and Inter-Process Communication (IPC), providing a flexible and efficient means of interaction.
 
   This combination of a low-impact background service and a separate, interactive CLI contributes to the application's usability and adaptability.
 
