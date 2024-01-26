@@ -12,11 +12,13 @@
 #include <cstdlib>
 #include <csignal>
 
+
 extern char **environ;
 
 using namespace ftxui;
 
 int main() {
+
 
     boost::interprocess::shared_memory_object shm;
 
@@ -26,19 +28,23 @@ int main() {
         boost::interprocess::read_write
     );
 
+
     boost::interprocess::mapped_region region(shm, boost::interprocess::read_write);
 
     void * addr = region.get_address();
 
     int * command = static_cast<int*>(addr);
 
+
     auto screen = ScreenInteractive::Fullscreen();
 
     std::vector<std::string> entries = {
         "Start Service",
         "Stop Service",
+
         "Exit TUI",
         "Exit TUI and Service",
+
     };
     int selected = 0;
 
@@ -48,6 +54,7 @@ int main() {
             *command = 0;
         } else if (selected == 1) {
             *command = 1;
+
         } else if (selected == 2) {
             // Exit TUI
             *command = 1;
@@ -82,6 +89,7 @@ auto container = Container::Vertical({
 });
 
     screen.Loop(container);
+
 
     std::cout << "Selected element = " << selected << std::endl;
 }
