@@ -13,7 +13,9 @@
 #include <thread>
 #include <vector>
 #include "infrastructure/directory_monitor.h"
+
 #include <signal.h>
+
 
 using namespace ftxui;
 using boost::asio::local::stream_protocol;
@@ -35,6 +37,7 @@ int main() {
         );
         shm.truncate(sizeof(int));
 
+
     boost::interprocess::mapped_region region(shm, boost::interprocess::read_write);
 
     void * addr = region.get_address();
@@ -47,7 +50,9 @@ int main() {
     directory_paths_to_monitor = {"/Users/jameshaddock/Desktop/Coding/Projects/get_sorty/service/test/testdir1"};
     // check integrity of the file paths that have been stored
     DirectoryMonitor directoryMonitor(directory_paths_to_monitor);
+
     *command = 1;
+
     do {
         if (*command == 0) {
             directoryMonitor.start_monitoring();
