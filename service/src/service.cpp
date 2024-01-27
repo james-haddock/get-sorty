@@ -1,20 +1,19 @@
 // #ifdef __unix__
 #include <unistd.h>
 // #endif
-#include <boost/interprocess/shared_memory_object.hpp>
-#include <boost/interprocess/mapped_region.hpp>
-#include <ftxui/component/component.hpp> 
-#include <ftxui/component/screen_interactive.hpp>
-#include <boost/asio.hpp>
 #include <chrono>
 #include <filesystem>
 #include <iostream>
 #include <set>
 #include <thread>
 #include <vector>
-#include "infrastructure/directory_monitor.h"
-
+#include <ftxui/component/component.hpp> 
+#include <ftxui/component/screen_interactive.hpp>
+#include <boost/asio.hpp>
+#include <boost/interprocess/shared_memory_object.hpp>
+#include <boost/interprocess/mapped_region.hpp>
 #include <signal.h>
+#include "infrastructure/directory_monitor.h"
 
 
 using namespace ftxui;

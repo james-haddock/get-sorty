@@ -1,6 +1,6 @@
 #ifndef DIRECTORY_MONITOR_H
 #define DIRECTORY_MONITOR_H
-#include "../domain/process_new_file.h"
+#include "domain/process_new_file.h"
 
 #include <filesystem>
 #include <map>
@@ -19,7 +19,7 @@ public:
   void remove_directory(const std::filesystem::path &path);
 
 private:
-void initialize_files();
+  void initialize_files();
   std::vector<std::filesystem::path> directories_to_monitor;
   std::map<std::string, std::set<std::filesystem::path>> previous_files;
   std::thread monitor_thread;
